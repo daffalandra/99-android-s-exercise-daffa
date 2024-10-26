@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.sunibcode.a99exercisedaffa.adapter.ListingAdapter
 import com.sunibcode.a99exercisedaffa.model.Listing
 import com.sunibcode.a99exercisedaffa.network.RetrofitClient
 import retrofit2.Call

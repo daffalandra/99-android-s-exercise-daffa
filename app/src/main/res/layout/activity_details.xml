@@ -8,7 +8,7 @@
     tools:context=".detailsActivity">
 
     <ScrollView
-        android:id="@+id/sv_detailsPage"
+        android:id="@+id/scroll_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 

@@ -4,7 +4,7 @@ import com.sunibcode.a99exercisedaffa.model.Listing
 import retrofit2.Call
 import retrofit2.http.GET
 
-interface RetrofitService {
+interface ListingService {
     @GET("listings.json")
     fun getApartments(): Call<List<Listing>>
 }

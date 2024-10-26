@@ -7,13 +7,14 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.sunibcode.a99exercisedaffa.adapter.ListingAdapter
+import com.sunibcode.a99exercisedaffa.listener.ListingListener
 import com.sunibcode.a99exercisedaffa.model.Listing
 import com.sunibcode.a99exercisedaffa.network.RetrofitClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), ListingListener {
 
     private lateinit var listingAdapter: ListingAdapter
     private lateinit var recyclerView: RecyclerView
@@ -24,6 +25,10 @@ class MainActivity : AppCompatActivity() {
 
         recyclerView = findViewById(R.id.listingItem)
         recyclerView.layoutManager = LinearLayoutManager(this)
+
+        // Initialize adapter with the listener
+        listingAdapter = ListingAdapter(emptyList(), this)
+        recyclerView.adapter = listingAdapter
 
         // Fetch data from API
         fetchListingData()
@@ -49,8 +54,11 @@ class MainActivity : AppCompatActivity() {
             }
         })
     }
-    override fun onItemClick(position: Int) {
-        val intent = Intent(this,DetailActivity::class.java)
-        startActivity( intent)
+    override fun onListingClick(listing: Listing) {
+        val intent = Intent(this, DetailActivity::class.java)
+        intent.putExtra("listing_id", listing.id) // Pass any necessary data
+        startActivity(intent)
     }
+
 }
+

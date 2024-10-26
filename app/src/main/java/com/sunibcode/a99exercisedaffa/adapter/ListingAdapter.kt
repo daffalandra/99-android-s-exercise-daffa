@@ -9,27 +9,40 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.sunibcode.a99exercisedaffa.R
+import com.sunibcode.a99exercisedaffa.listener.ListingListener
 import com.sunibcode.a99exercisedaffa.model.Listing
 
-class ListingAdapter(private val listings: List<Listing>) :
-    RecyclerView.Adapter<ListingAdapter.ApartmentViewHolder>() {
+class ListingAdapter(
+    private val listings: List<Listing>,
+    private val listener: ListingListener
+) :
+    RecyclerView.Adapter<ListingAdapter.ListingViewHolder>() {
 
-    class ApartmentViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class ListingViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val listingImage: ImageView = itemView.findViewById(R.id.listingImage)
         val listingName: TextView = itemView.findViewById(R.id.listingName)
         val listingAddress: TextView = itemView.findViewById(R.id.listingAddress)
         val listingDetails: TextView = itemView.findViewById(R.id.listingDetails)
         val listingPrice: TextView = itemView.findViewById(R.id.listingPrice)
         val listingCategory : TextView = itemView.findViewById(R.id.listingCategory)
+
+        init {
+            itemView.setOnClickListener {
+                val position = adapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    listener.onListingClick(listings[position])
+                }
+            }
+        }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ApartmentViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListingViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.listing_item, parent, false)
-        return ApartmentViewHolder(view)
+        return ListingViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: ApartmentViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ListingViewHolder, position: Int) {
         val listing = listings[position]
 
         // Load image using Glide

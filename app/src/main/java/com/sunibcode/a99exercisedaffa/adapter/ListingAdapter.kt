@@ -13,7 +13,7 @@ import com.sunibcode.a99exercisedaffa.listener.ListingListener
 import com.sunibcode.a99exercisedaffa.model.Listing
 
 class ListingAdapter(
-    private val listings: List<Listing>,
+    private val listings: List<Listing>
     private val listener: ListingListener
 ) :
     RecyclerView.Adapter<ListingAdapter.ListingViewHolder>() {
@@ -28,8 +28,9 @@ class ListingAdapter(
 
         init {
             itemView.setOnClickListener {
-                val position = adapterPosition
+                val position = bindingAdapterPosition
                 if (position != RecyclerView.NO_POSITION) {
+                    // Use the listener from the outer class
                     listener.onListingClick(listings[position])
                 }
             }

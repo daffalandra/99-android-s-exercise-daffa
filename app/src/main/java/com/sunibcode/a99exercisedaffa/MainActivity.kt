@@ -2,6 +2,7 @@ package com.sunibcode.a99exercisedaffa
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -25,10 +26,6 @@ class MainActivity : AppCompatActivity(), ListingListener {
 
         recyclerView = findViewById(R.id.listingItem)
         recyclerView.layoutManager = LinearLayoutManager(this)
-
-        // Initialize adapter with the listener
-        listingAdapter = ListingAdapter(emptyList(), this)
-        recyclerView.adapter = listingAdapter
 
         // Fetch data from API
         fetchListingData()
@@ -54,11 +51,12 @@ class MainActivity : AppCompatActivity(), ListingListener {
             }
         })
     }
+    /*
     override fun onListingClick(listing: Listing) {
         val intent = Intent(this, DetailActivity::class.java)
         intent.putExtra("listing_id", listing.id) // Pass any necessary data
         startActivity(intent)
     }
-
+     */
 }
 

@@ -31,6 +31,8 @@ class DetailActivity : AppCompatActivity() {
         findViewById<ImageView>(R.id.back_btn).setOnClickListener {
             finish()
         }
+        //val listingId = intent.getStringExtra("listing_id") ?: return // Retrieve the listing ID
+
         fetchListingData()
     }
 
@@ -58,4 +60,5 @@ class DetailActivity : AppCompatActivity() {
         val intent = Intent(this,MainActivity::class.java)
         startActivity( intent)
     }
+
 }

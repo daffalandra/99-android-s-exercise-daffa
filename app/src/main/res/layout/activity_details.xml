@@ -84,7 +84,7 @@
                     <ImageView
                         android:layout_width="16dp"
                         android:layout_height="16dp"
-                        android:background="@drawable/MapIcon" />
+                        android:background="@drawable/map_icon" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -109,7 +109,7 @@
                         android:layout_width="16dp"
                         android:layout_height="16dp"
                         android:layout_marginTop="4dp"
-                        android:background="@drawable/BedIcon" />
+                        android:background="@drawable/bed_icon" />
 
                     <TextView
                         android:id="@+id/bedrooms"
@@ -124,7 +124,7 @@
                         android:layout_width="16dp"
                         android:layout_height="16dp"
                         android:layout_marginTop="4dp"
-                        android:background="@drawable/BathtubIcon"
+                        android:background="@drawable/bathtub_icon"
                         android:layout_marginLeft="20dp" />
 
                     <TextView
@@ -140,7 +140,7 @@
                         android:layout_width="16dp"
                         android:layout_height="16dp"
                         android:layout_marginTop="4dp"
-                        android:background="@drawable/AreaIcon"
+                        android:background="@drawable/area_icon"
                         android:layout_marginLeft="20dp" />
 
                     <TextView
@@ -419,7 +419,7 @@
         android:id="@+id/back_btn"
         android:layout_width="14dp"
         android:layout_height="24dp"
-        android:src="@drawable/BackIcon"
+        android:src="@drawable/back_icon"
         android:layout_marginTop="25dp"
         android:layout_marginStart="25dp" />
 </FrameLayout>

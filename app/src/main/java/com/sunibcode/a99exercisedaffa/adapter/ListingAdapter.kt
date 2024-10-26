@@ -1,4 +1,4 @@
-package com.sunibcode.a99exercisedaffa
+package com.sunibcode.a99exercisedaffa.adapter
 
 
 import android.view.LayoutInflater
@@ -8,6 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.sunibcode.a99exercisedaffa.R
 import com.sunibcode.a99exercisedaffa.model.Listing
 
 class ListingAdapter(private val listings: List<Listing>) :

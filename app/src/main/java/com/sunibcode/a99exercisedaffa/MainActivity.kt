@@ -1,5 +1,6 @@
 package com.sunibcode.a99exercisedaffa
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.Toast
@@ -47,5 +48,9 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this@MainActivity, "Error: ${t.message}", Toast.LENGTH_SHORT).show()
             }
         })
+    }
+    override fun onItemClick(position: Int) {
+        val intent = Intent(this,DetailActivity::class.java)
+        startActivity( intent)
     }
 }

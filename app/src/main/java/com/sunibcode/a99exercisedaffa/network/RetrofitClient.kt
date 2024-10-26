@@ -1,5 +1,6 @@
-package com.sunibcode.a99exercisedaffa.network
+package com.example.exercise_99group.data.remote
 
+import com.sunibcode.a99exercisedaffa.network.ListingService
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

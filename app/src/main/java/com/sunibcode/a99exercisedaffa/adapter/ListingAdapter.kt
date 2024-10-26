@@ -14,30 +14,33 @@ import com.sunibcode.a99exercisedaffa.model.Listing
 
 class ListingAdapter(
     private val listings: List<Listing>
-    //private val listener: ListingListener
+    //val listener: onListingClickListener
 ) :
     RecyclerView.Adapter<ListingAdapter.ListingViewHolder>() {
+/*
+        interface onListingClickListener {
+        fun onListingClick(position: Int)
+    }
 
-    class ListingViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val listingImage: ImageView = itemView.findViewById(R.id.listingImage)
-        val listingName: TextView = itemView.findViewById(R.id.listingName)
-        val listingAddress: TextView = itemView.findViewById(R.id.listingAddress)
-        val listingDetails: TextView = itemView.findViewById(R.id.listingDetails)
-        val listingPrice: TextView = itemView.findViewById(R.id.listingPrice)
-        val listingCategory : TextView = itemView.findViewById(R.id.listingCategory)
-
-        /*
+ */
+    class ListingViewHolder(view: View, /*val listener: onListingClickListener*/) : RecyclerView.ViewHolder(view) /*View.OnClickListener*/ {
+        val listingImage: ImageView = view.findViewById(R.id.listingImage)
+        val listingName: TextView = view.findViewById(R.id.listingName)
+        val listingAddress: TextView = view.findViewById(R.id.listingAddress)
+        val listingDetails: TextView = view.findViewById(R.id.listingDetails)
+        val listingPrice: TextView = view.findViewById(R.id.listingPrice)
+        val listingCategory : TextView = view.findViewById(R.id.listingCategory)
+/*
         init {
-            itemView.setOnClickListener {
-                val position = bindingAdapterPosition
-                if (position != RecyclerView.NO_POSITION) {
-                    // Use the listener from the outer class
-                    listener.onListingClick(listings[position])
-                }
+            itemView.setOnClickListener(this)
+        }
+        override fun onClick(p0: View?) {
+            val position = adapterPosition
+            if(position!=RecyclerView.NO_POSITION){
+                listener.onListingClick(position)
             }
         }
-
-         */
+ */
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListingViewHolder {

@@ -1,21 +1,18 @@
 package com.sunibcode.a99exercisedaffa
 
-import android.content.Intent
 import android.os.Bundle
-import android.view.View
-import androidx.appcompat.app.AppCompatActivity
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.exercise_99group.data.remote.RetrofitClient
 import com.sunibcode.a99exercisedaffa.adapter.ListingAdapter
-import com.sunibcode.a99exercisedaffa.listener.ListingListener
 import com.sunibcode.a99exercisedaffa.model.Listing
-import com.sunibcode.a99exercisedaffa.network.RetrofitClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MainActivity : AppCompatActivity(), ListingListener {
+class MainActivity : AppCompatActivity() {
 
     private lateinit var listingAdapter: ListingAdapter
     private lateinit var recyclerView: RecyclerView
@@ -23,7 +20,6 @@ class MainActivity : AppCompatActivity(), ListingListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_listing)
-
         recyclerView = findViewById(R.id.listingItem)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
@@ -32,7 +28,7 @@ class MainActivity : AppCompatActivity(), ListingListener {
     }
 
     private fun fetchListingData() {
-        RetrofitClient.instance.getApartments().enqueue(object : Callback<List<Listing>> {
+        RetrofitClient.instance.getListing().enqueue(object : Callback<List<Listing>> {
             override fun onResponse(
                 call: Call<List<Listing>>,
                 response: Response<List<Listing>>
@@ -51,12 +47,4 @@ class MainActivity : AppCompatActivity(), ListingListener {
             }
         })
     }
-    /*
-    override fun onListingClick(listing: Listing) {
-        val intent = Intent(this, DetailActivity::class.java)
-        intent.putExtra("listing_id", listing.id) // Pass any necessary data
-        startActivity(intent)
-    }
-     */
 }
-

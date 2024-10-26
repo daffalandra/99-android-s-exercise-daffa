@@ -1,4 +1,4 @@
-package com.sunibcode.a99exercisedaffa
+package com.sunibcode.a99exercisedaffa.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,11 +7,15 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.sunibcode.a99exercisedaffa.R
 import com.sunibcode.a99exercisedaffa.model.ListingDetails
 
-class DetailAdapter(val listingDetails: ListingDetails): RecyclerView.Adapter<DetailAdapter.MyViewHolder>() {
+class DetailAdapter(
+    private val listingDetails: List<ListingDetails>
+):
+    RecyclerView.Adapter<DetailAdapter.MyViewHolder>() {
     class MyViewHolder (view: View) : RecyclerView.ViewHolder(view){
-        val imgDetailPage = view.findViewById<ImageView>(R.id.listingImage);
+        val listingImage = view.findViewById<ImageView>(R.id.listingImage);
         val txtPrice = view.findViewById<TextView>(R.id.txtPrice);
         val txtName = view.findViewById<TextView>(R.id.txtName);
         val txtAddress = view.findViewById<TextView>(R.id.txtAddress);
@@ -36,28 +40,28 @@ class DetailAdapter(val listingDetails: ListingDetails): RecyclerView.Adapter<De
         return MyViewHolder(view);
     }
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.txtPrice.text = String.format("%,d",listingDetails?.attributes?.price)
-        holder.txtName.text = listingDetails?.project_name
-        holder.txtAddress.text = listingDetails?.address?.title
-        holder.txtSubtitle.text = listingDetails?.address?.subtitle
-        holder.bedrooms.text = listingDetails?.attributes?.bedrooms.toString();
-        holder.bathrooms.text = listingDetails?.attributes?.bathrooms.toString();
-        holder.areaSize.text = String.format("%,d",listingDetails?.attributes?.area_size)
-        holder.txtPriceSqft.text = listingDetails?.property_details?.get(position)?.text;
-        holder.txtFloorLevel.text = listingDetails?.property_details?.get(position)?.text;
-        holder.txtOfBed.text = listingDetails?.property_details?.get(position)?.text
-        holder.txtFacing.text = listingDetails?.property_details?.get(position)?.text
-        holder.txtBuiltYear.text = listingDetails?.property_details?.get(position)?.text
-        holder.txtTenure.text = listingDetails?.property_details?.get(position)?.text
-        holder.txtType.text = listingDetails?.property_details?.get(position)?.text
-        holder.txtLastUpdated.text = listingDetails?.property_details?.get(position)?.text
-        holder.txtListingDescription.text = listingDetails?.description
+        val listingDetails = listingDetails[position]
 
-        Glide.with(holder.imgDetailPage)
-            .load(listingDetails?.photo)
-            .error(R.drawable.ic_launcher_background)
-            .into(holder.imgDetailPage)
+        Glide.with(holder.itemView.context)
+            .load(listingDetails.photo)
+            .into(holder.listingImage)
 
+        holder.txtPrice.text = "$${listingDetails.attributes.price}"
+        holder.txtName.text = listingDetails.project_name
+        holder.txtAddress.text = listingDetails.address.title
+        holder.txtSubtitle.text = listingDetails.address.subtitle
+        holder.bedrooms.text = listingDetails.attributes.bedrooms.toString();
+        holder.bathrooms.text = listingDetails.attributes.bathrooms.toString();
+        holder.areaSize.text = "$${listingDetails.attributes.area_size}"
+        holder.txtPriceSqft.text = listingDetails.property_details.get(position).text;
+        holder.txtFloorLevel.text = listingDetails.property_details.get(position).text;
+        holder.txtOfBed.text = listingDetails.property_details.get(position).text
+        holder.txtFacing.text = listingDetails.property_details.get(position).text
+        holder.txtBuiltYear.text = listingDetails.property_details.get(position).text
+        holder.txtTenure.text = listingDetails.property_details.get(position).text
+        holder.txtType.text = listingDetails.property_details.get(position).text
+        holder.txtLastUpdated.text = listingDetails.property_details.get(position).text
+        holder.txtListingDescription.text = listingDetails.description
     }
 
     override fun getItemCount(): Int {

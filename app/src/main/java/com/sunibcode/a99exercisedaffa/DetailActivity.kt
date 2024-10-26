@@ -56,9 +56,10 @@ class DetailActivity : AppCompatActivity() {
             }
         })
     }
-    override fun onItemClick(position: Int) {
+    /*
+    fun onItemClick(position: Int) {
         val intent = Intent(this,MainActivity::class.java)
         startActivity( intent)
     }
-
+     */
 }

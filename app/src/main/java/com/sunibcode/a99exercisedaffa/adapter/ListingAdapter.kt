@@ -14,7 +14,7 @@ import com.sunibcode.a99exercisedaffa.model.Listing
 
 class ListingAdapter(
     private val listings: List<Listing>
-    private val listener: ListingListener
+    //private val listener: ListingListener
 ) :
     RecyclerView.Adapter<ListingAdapter.ListingViewHolder>() {
 
@@ -26,6 +26,7 @@ class ListingAdapter(
         val listingPrice: TextView = itemView.findViewById(R.id.listingPrice)
         val listingCategory : TextView = itemView.findViewById(R.id.listingCategory)
 
+        /*
         init {
             itemView.setOnClickListener {
                 val position = bindingAdapterPosition
@@ -35,6 +36,8 @@ class ListingAdapter(
                 }
             }
         }
+
+         */
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListingViewHolder {

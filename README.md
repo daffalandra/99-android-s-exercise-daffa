@@ -102,3 +102,5 @@ Figma: https://www.figma.com/file/4ms9vSCpUcHRqqLTaVcbYY/Mobile-Team-Home-Assign
 ## Notes
 1. The APK file is in `app/build/outputs/apk/debug/app-debug.apk`
 2. Im unable to fetch image in `DetailsActivity` or `DetailsAdapter` because of syntax error, not yet to found the solution, so i use static image instead
+3. Explanation Video:
+https://binusianorg-my.sharepoint.com/personal/muhammad_alandra_binus_ac_id/_layouts/15/guestaccess.aspx?share=EX0slt8OZ9FHv_Ug983MsswBc-tL34kp6E1zyDxarpJ-Zw&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=MU16VO

@@ -9,28 +9,25 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.sunibcode.a99exercisedaffa.R
-import com.sunibcode.a99exercisedaffa.listener.ListingListener
 import com.sunibcode.a99exercisedaffa.model.Listing
 
 class ListingAdapter(
-    private val listings: List<Listing>
-    //val listener: onListingClickListener
+    private val listings: List<Listing>,
+    val listener: onListingClickListener
 ) :
     RecyclerView.Adapter<ListingAdapter.ListingViewHolder>() {
-/*
-        interface onListingClickListener {
-        fun onListingClick(position: Int)
+        interface onListingClickListener{
+            fun onListingClick(position: Int)
     }
 
- */
-    class ListingViewHolder(view: View, /*val listener: onListingClickListener*/) : RecyclerView.ViewHolder(view) /*View.OnClickListener*/ {
+    class ListingViewHolder(view: View, val listener: onListingClickListener) : RecyclerView.ViewHolder(view), View.OnClickListener {
         val listingImage: ImageView = view.findViewById(R.id.listingImage)
         val listingName: TextView = view.findViewById(R.id.listingName)
         val listingAddress: TextView = view.findViewById(R.id.listingAddress)
         val listingDetails: TextView = view.findViewById(R.id.listingDetails)
         val listingPrice: TextView = view.findViewById(R.id.listingPrice)
         val listingCategory : TextView = view.findViewById(R.id.listingCategory)
-/*
+
         init {
             itemView.setOnClickListener(this)
         }
@@ -40,13 +37,12 @@ class ListingAdapter(
                 listener.onListingClick(position)
             }
         }
- */
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListingViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.listing_item, parent, false)
-        return ListingViewHolder(view)
+        return ListingViewHolder(view, listener)
     }
 
     override fun onBindViewHolder(holder: ListingViewHolder, position: Int) {

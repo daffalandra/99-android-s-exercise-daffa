@@ -1,6 +1,7 @@
 package com.sunibcode.a99exercisedaffa
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -44,7 +45,8 @@ class DetailActivity : AppCompatActivity() {
                 call: Call<List<ListingDetails>>,
                 t: Throwable
             ) {
-                Toast.makeText(this@DetailActivity, "Error: ${t.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@DetailActivity, "Error1: ${t.message}", Toast.LENGTH_LONG).show()
+                Log.e("DetailActivity", "Error fetching data", t)
             }
         })
     }

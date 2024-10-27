@@ -23,6 +23,7 @@
                 android:id="@+id/detailImage"
                 android:layout_width="match_parent"
                 android:layout_height="281dp"
+                android:background="@drawable/detail_img"
                 android:scaleType="centerCrop" />
 
             <LinearLayout
@@ -35,7 +36,7 @@
                     android:id="@+id/txtPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="$5,700"
+                    android:text="$2,561"
                     android:textSize="23sp"
                     android:textColor="@color/darkblue"
                     android:textStyle="bold"
@@ -272,7 +273,7 @@
                         android:id="@+id/txtPriceSqft"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="$1,812 psf"
+                        android:text="$1,420 psf"
                         android:textColor="@color/darkblue"
                         android:layout_marginLeft="20dp"
                         android:textSize="16sp" />
@@ -281,7 +282,7 @@
                         android:id="@+id/txtFloorLevel"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="HIGH (40 total)"
+                        android:text="Mid"
                         android:textColor="@color/darkblue"
                         android:textSize="16sp"
                         android:layout_marginLeft="20dp"
@@ -314,7 +315,7 @@
                         android:id="@+id/txtBuiltYear"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="2020"
+                        android:text="2004"
                         android:textColor="@color/darkblue"
                         android:textSize="16sp"
                         android:layout_marginLeft="20dp"
@@ -336,7 +337,7 @@
                         android:id="@+id/txtType"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Condo"
+                        android:text="HDB 5 Rooms"
                         android:textColor="@color/darkblue"
                         android:textSize="16sp"
                         android:layout_marginLeft="20dp"
@@ -347,7 +348,7 @@
                         android:id="@+id/txtLastUpdated"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="2 min ago"
+                        android:text="seconds ago"
                         android:textColor="@color/darkblue"
                         android:textSize="16sp"
                         android:layout_marginLeft="20dp"
@@ -385,7 +386,8 @@
                     android:translationY="-3.07sp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="10dp"
-                    android:layout_marginRight="20dp" />
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="20dp"/>
             </LinearLayout>
 
 

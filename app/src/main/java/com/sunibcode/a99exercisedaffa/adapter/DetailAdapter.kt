@@ -15,23 +15,23 @@ class DetailAdapter(
 ):
     RecyclerView.Adapter<DetailAdapter.MyViewHolder>() {
     class MyViewHolder (view: View) : RecyclerView.ViewHolder(view){
-        val listingImage = view.findViewById<ImageView>(R.id.listingImage);
-        val txtPrice = view.findViewById<TextView>(R.id.txtPrice);
-        val txtName = view.findViewById<TextView>(R.id.txtName);
-        val txtAddress = view.findViewById<TextView>(R.id.txtAddress);
-        val txtSubtitle = view.findViewById<TextView>(R.id.txtSubtitle);
-        val bedrooms = view.findViewById<TextView>(R.id.bedrooms);
-        val bathrooms = view.findViewById<TextView>(R.id.bathrooms);
-        val areaSize = view.findViewById<TextView>(R.id.areaSize);
-        val txtPriceSqft = view.findViewById<TextView>(R.id.txtPriceSqft);
-        val txtFloorLevel = view.findViewById<TextView>(R.id.txtFloorLevel);
-        val txtOfBed = view.findViewById<TextView>(R.id.txtOfBed);
-        val txtFacing = view.findViewById<TextView>(R.id.txtFacing);
-        val txtBuiltYear = view.findViewById<TextView>(R.id.txtBuiltYear);
-        val txtTenure = view.findViewById<TextView>(R.id.txtTenure);
-        val txtType = view.findViewById<TextView>(R.id.txtType);
-        val txtLastUpdated = view.findViewById<TextView>(R.id.txtLastUpdated);
-        val txtListingDescription = view.findViewById<TextView>(R.id.txtListingDescription);
+        val listingImage = view.findViewById<ImageView>(R.id.listingImage)
+        val txtPrice = view.findViewById<TextView>(R.id.txtPrice)
+        val txtName = view.findViewById<TextView>(R.id.txtName)
+        val txtAddress = view.findViewById<TextView>(R.id.txtAddress)
+        val txtSubtitle = view.findViewById<TextView>(R.id.txtSubtitle)
+        val bedrooms = view.findViewById<TextView>(R.id.bedrooms)
+        val bathrooms = view.findViewById<TextView>(R.id.bathrooms)
+        val areaSize = view.findViewById<TextView>(R.id.areaSize)
+        val txtPriceSqft = view.findViewById<TextView>(R.id.txtPriceSqft)
+        val txtFloorLevel = view.findViewById<TextView>(R.id.txtFloorLevel)
+        val txtOfBed = view.findViewById<TextView>(R.id.txtOfBed)
+        val txtFacing = view.findViewById<TextView>(R.id.txtFacing)
+        val txtBuiltYear = view.findViewById<TextView>(R.id.txtBuiltYear)
+        val txtTenure = view.findViewById<TextView>(R.id.txtTenure)
+        val txtType = view.findViewById<TextView>(R.id.txtType)
+        val txtLastUpdated = view.findViewById<TextView>(R.id.txtLastUpdated)
+        val txtListingDescription = view.findViewById<TextView>(R.id.txtListingDescription)
 
     }
 
@@ -50,11 +50,11 @@ class DetailAdapter(
         holder.txtName.text = listingDetails.project_name
         holder.txtAddress.text = listingDetails.address.title
         holder.txtSubtitle.text = listingDetails.address.subtitle
-        holder.bedrooms.text = listingDetails.attributes.bedrooms.toString();
-        holder.bathrooms.text = listingDetails.attributes.bathrooms.toString();
+        holder.bedrooms.text = listingDetails.attributes.bedrooms.toString()
+        holder.bathrooms.text = listingDetails.attributes.bathrooms.toString()
         holder.areaSize.text = "$${listingDetails.attributes.area_size}"
-        holder.txtPriceSqft.text = listingDetails.property_details.get(position).text;
-        holder.txtFloorLevel.text = listingDetails.property_details.get(position).text;
+        holder.txtPriceSqft.text = listingDetails.property_details.get(position).text
+        holder.txtFloorLevel.text = listingDetails.property_details.get(position).text
         holder.txtOfBed.text = listingDetails.property_details.get(position).text
         holder.txtFacing.text = listingDetails.property_details.get(position).text
         holder.txtBuiltYear.text = listingDetails.property_details.get(position).text
@@ -74,5 +74,4 @@ class DetailAdapter(
 
 
 }
-
 

@@ -36,7 +36,7 @@
                     android:id="@+id/txtPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="$2,561"
+                    android:text="$1,111"
                     android:textSize="23sp"
                     android:textColor="@color/darkblue"
                     android:textStyle="bold"
@@ -115,7 +115,7 @@
                         android:id="@+id/bedrooms"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="3 Beds"
+                        android:text="1 Beds"
                         android:textColor="@color/darkblue"
                         android:layout_marginLeft="8dp"
                         android:textSize="16sp" />
@@ -131,7 +131,7 @@
                         android:id="@+id/bathrooms"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="2 Bathrooms"
+                        android:text="1 Bathrooms"
                         android:textColor="@color/darkblue"
                         android:layout_marginLeft="8dp"
                         android:textSize="16sp" />
@@ -147,7 +147,7 @@
                         android:id="@+id/areaSize"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="2561 sqft"
+                        android:text="11111 sqft"
                         android:textColor="@color/darkblue"
                         android:layout_marginLeft="8dp"
                         android:textSize="16sp" />
@@ -273,7 +273,7 @@
                         android:id="@+id/txtPriceSqft"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="$1,420 psf"
+                        android:text="$1,42022 psf"
                         android:textColor="@color/darkblue"
                         android:layout_marginLeft="20dp"
                         android:textSize="16sp" />
@@ -282,7 +282,7 @@
                         android:id="@+id/txtFloorLevel"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Mid"
+                        android:text="Mid111"
                         android:textColor="@color/darkblue"
                         android:textSize="16sp"
                         android:layout_marginLeft="20dp"

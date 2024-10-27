@@ -11,7 +11,7 @@ import com.sunibcode.a99exercisedaffa.R
 import com.sunibcode.a99exercisedaffa.model.ListingDetails
 
 class DetailAdapter(
-    private val listingDetails: List<ListingDetails>
+    val listingDetails: ListingDetails?
 ):
     RecyclerView.Adapter<DetailAdapter.MyViewHolder>() {
     class MyViewHolder (view: View) : RecyclerView.ViewHolder(view){
@@ -37,41 +37,34 @@ class DetailAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.activity_detail,parent,false);
-        return MyViewHolder(view);
+        return MyViewHolder(view)
     }
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        val listingDetails = listingDetails[position]
-
+        /*
         Glide.with(holder.itemView.context)
             .load(listingDetails.photo)
             .into(holder.listingImage)
 
-        holder.txtPrice.text = "$${listingDetails.attributes.price}"
-        holder.txtName.text = listingDetails.project_name
-        holder.txtAddress.text = listingDetails.address.title
-        holder.txtSubtitle.text = listingDetails.address.subtitle
-        holder.bedrooms.text = listingDetails.attributes.bedrooms.toString()
-        holder.bathrooms.text = listingDetails.attributes.bathrooms.toString()
-        holder.areaSize.text = "$${listingDetails.attributes.area_size}"
-        holder.txtPriceSqft.text = listingDetails.property_details.get(position).text
-        holder.txtFloorLevel.text = listingDetails.property_details.get(position).text
-        holder.txtOfBed.text = listingDetails.property_details.get(position).text
-        holder.txtFacing.text = listingDetails.property_details.get(position).text
-        holder.txtBuiltYear.text = listingDetails.property_details.get(position).text
-        holder.txtTenure.text = listingDetails.property_details.get(position).text
-        holder.txtType.text = listingDetails.property_details.get(position).text
-        holder.txtLastUpdated.text = listingDetails.property_details.get(position).text
-        holder.txtListingDescription.text = listingDetails.description
+         */
+
+        holder.txtPrice.text = String.format("$%,d", listingDetails?.attributes?.price)
+        holder.txtName.text = listingDetails?.project_name
+        holder.txtAddress.text = listingDetails?.address?.title
+        holder.txtSubtitle.text = listingDetails?.address?.subtitle
+        holder.bedrooms.text = String.format("%,d Beds", listingDetails?.attributes?.bedrooms)
+        holder.bathrooms.text = String.format("%,d Bathrooms", listingDetails?.attributes?.bathrooms)
+        holder.areaSize.text = String.format("%,d sqft", listingDetails?.attributes?.area_size)
+        holder.txtPriceSqft.text = listingDetails?.property_details?.get(0)?.text
+        holder.txtFloorLevel.text = listingDetails?.property_details?.get(1)?.text
+        holder.txtOfBed.text = listingDetails?.property_details?.get(2)?.text
+        holder.txtFacing.text = listingDetails?.property_details?.get(3)?.text
+        holder.txtBuiltYear.text = listingDetails?.property_details?.get(4)?.text
+        holder.txtTenure.text = listingDetails?.property_details?.get(5)?.text
+        holder.txtType.text = listingDetails?.property_details?.get(6)?.text
+        holder.txtLastUpdated.text = listingDetails?.property_details?.get(7)?.text
+        holder.txtListingDescription.text = listingDetails?.description
     }
 
-    override fun getItemCount(): Int {
-        if(listingDetails!=null){
-            return 1
-        }
-        return 0
-    }
-
-
-
+    override fun getItemCount() = 1
 }
 

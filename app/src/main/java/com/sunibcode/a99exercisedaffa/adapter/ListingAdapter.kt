@@ -32,7 +32,7 @@ class ListingAdapter(
             itemView.setOnClickListener(this)
         }
         override fun onClick(p0: View?) {
-            val position = adapterPosition
+            val position = absoluteAdapterPosition
             if(position!=RecyclerView.NO_POSITION){
                 listener.onListingClick(position)
             }

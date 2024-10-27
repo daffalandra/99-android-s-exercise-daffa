@@ -6,5 +6,5 @@ import retrofit2.http.GET
 
 interface DetailsService {
     @GET("details/0.json")
-    fun getDetails(): Call<List<ListingDetails>>
+    fun getDetails(): Call<ListingDetails>
 }
